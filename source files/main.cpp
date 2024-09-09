@@ -9,19 +9,18 @@ using namespace std;
 //example quadratic equation: ax^2 + bx + c = 0
 //the quadratic formula is: x = (-b ± √(b^2 - 4ac)) / 2a
 //so our variables are a, b, and c. 
-//the functions i will need: 
-//this is a function to calculate the roots of the quadratic equation
-    void quadraticRoots(int, int, int);
+//Function prototypes
+    void quadraticRoots(double, double, double);
 //this is a function to calculate the discriminant
-    int discriminant(int, int, int);
+    double discriminant(double, double, double);
 //function to calculate the roots
-    void calculateRoots(int, int, int, int);
+    void calculateRoots(double, double, double, double);
 //function to display the roots of the quadratic equation
     
 
 //main program loop begins here
-int main() {
-    int a, b, c;
+double main() {
+    double a, b, c;
     cout << "Enter the coefficients of the quadratic equation (a, b, and c): ";
     cin >> a >> b >> c;
     quadraticRoots(a, b, c);
