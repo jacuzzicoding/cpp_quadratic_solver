@@ -1,39 +1,74 @@
 //The purpose of this assignment is to develop a C++ program that:
 //calculates the roots of a quadratic equation using the quadratic formula. 
-//This will help students practice working with functions, conditional statements, input/output operations, and mathematical computations.
+//This will help me practice working with functions, conditional statements, input/output operations, and mathematical computations.
+
+
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
-//example quadratic equation: ax^2 + bx + c = 0
-//the quadratic formula is: x = (-b ± √(b^2 - 4ac)) / 2a
-//so our variables are a, b, and c. 
-//Function prototypes
-    void quadraticRoots(double, double, double);
-//this is a function to calculate the discriminant
-    double discriminant(double, double, double);
-//function to calculate the roots
-    void calculateRoots(double, double, double, double);
-//function to display the roots of the quadratic equation
-    
+// Function prototypes
+void quadraticRoots(double a, double b, double c);
+double discriminant(double a, double b, double c);
+void calculateRoots(double a, double b, double c, double disc);
 
-//main program loop begins here
-double main() {
+// main program loop begins here
+int main() {
     double a, b, c;
-    cout << "Enter the coefficients of the quadratic equation (a, b, and c): ";
-    cin >> a >> b >> c;
-    quadraticRoots(a, b, c);
-    if (a == 0) {
-        cout << "The value of 'a' cannot be zero. Please enter a valid value for 'a'." << endl;
-        return 0;
-    }
-    else if (discriminant(a, b, c) < 0) {
-        cout << "The roots are imaginary." << endl;
-        return 0;
-    }
-    else {
-        calculateRoots(a, b, c, discriminant(a, b, c));
-    }
+    char choice;
+
+    do {
+        cout << "This program calculates the roots of a quadratic equation in the form of ax^2 + bx + c.\n";
+        cout << "Enter the coefficients of the quadratic equation (a, b, and c): ";
+        cin >> a >> b >> c;
+
+        if (a == 0) {
+            cout << "This is not a quadratic equation. 'a' must be non-zero." << endl;
+        } else {
+            quadraticRoots(a, b, c);
+        }
+
+        cout << "Do you want to solve another equation? (y/n): ";
+        cin >> choice;
+    } while (choice == 'y' || choice == 'Y');
+
     return 0;
+}
+
+// now we will implement the function prototypes
+double discriminant(double a, double b, double c) {
+    return (b*b) - (4 * a * c);
+}
+
+void calculateRoots(double a, double b, double c, double disc) {
+    cout << fixed << setprecision(2);
+    if (disc >= 0) {
+        double root1 = (-b + sqrt(disc)) / (2 * a);
+        double root2 = (-b - sqrt(disc)) / (2 * a);
+        cout << "The roots of the quadratic equation are: " << root1 << " and " << root2 << endl;
+    } else {
+        double realPart = -b / (2 * a);
+        double imagPart = sqrt(-disc) / (2 * a);
+        cout << "The roots of the equation are: " 
+             << realPart << " + " << imagPart << "i and "
+             << realPart << " - " << imagPart << "i" << endl;
+    }
+}
+
+// add the quadraticRoots function
+void quadraticRoots(double a, double b, double c) {
+    double disc = discriminant(a, b, c);
+
+    if (disc > 0) {
+        cout << "The quadratic equation has two distinct real roots." << endl;
+        calculateRoots(a, b, c, disc);
+    } else if (disc == 0) {
+        cout << "The quadratic equation has one real root (repeated)." << endl;
+        calculateRoots(a, b, c, disc);
+    } else {
+        cout << "The quadratic equation has two complex roots." << endl;
+        calculateRoots(a, b, c, disc);
+    }
 }
