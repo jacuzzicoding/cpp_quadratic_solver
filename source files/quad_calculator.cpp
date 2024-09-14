@@ -18,9 +18,11 @@ void calculateRoots(double a, double b, double c, double disc);
 int main() {
     double a, b, c;
     char choice;
+
+//intro message before do while loop
+    cout << "This program calculates the roots of a quadratic equation in the form of ax^2 + bx + c.\n";
 //here we will use a do while loop to allow the user to solve multiple equations without restarting the program :)
     do {
-        cout << "This program calculates the roots of a quadratic equation in the form of ax^2 + bx + c.\n";
         cout << "Enter the coefficients of the quadratic equation (a, b, and c): ";
         cin >> a >> b >> c;
 //error checking to make sure the equation is quadratic
