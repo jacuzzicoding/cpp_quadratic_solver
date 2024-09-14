@@ -9,7 +9,7 @@
 #include <iomanip>
 using namespace std;
 
-// Function prototypes
+// Function prototypes because I put the function definitions after the main program loop
 void quadraticRoots(double a, double b, double c);
 double discriminant(double a, double b, double c);
 void calculateRoots(double a, double b, double c, double disc);
@@ -25,7 +25,7 @@ int main() {
         cin >> a >> b >> c;
 
         if (a == 0) {
-            cout << "This is not a quadratic equation. 'a' must be non-zero." << endl;
+            cout << "This is not a quadratic equation. 'a' must be non-zero. Remember, 'x' of a variable is really '1x'\n" << endl;
         } else {
             quadraticRoots(a, b, c);
         }
