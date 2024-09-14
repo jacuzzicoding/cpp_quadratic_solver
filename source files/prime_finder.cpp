@@ -1,5 +1,8 @@
-//Brock J Prime Number Program
-//It will tell you if a given number is prime or not, and provide a list of all the divisors of that number.
+//Brock Jenkinson
+//Class: CSCI-C212
+//Assignment: Lab Assignment 1 - Prime Number Checker
+//Date: 9/11/2024
+
 
 #include <iostream>
 #include <cmath>
