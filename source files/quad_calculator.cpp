@@ -1,7 +1,7 @@
-//The purpose of this assignment is to develop a C++ program that:
-//calculates the roots of a quadratic equation using the quadratic formula. 
-//This will help me practice working with functions, conditional statements, input/output operations, and mathematical computations.
-
+//Brock Jenkinson
+//Class: CSCI-C212
+//Assignment: Lab Assignment 1 - Quadratic Formula Calculator 
+//Date: 9/09/2024
 
 
 #include <iostream>
