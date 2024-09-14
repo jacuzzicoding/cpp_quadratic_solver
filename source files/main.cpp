@@ -9,7 +9,7 @@
 #include <iomanip>
 using namespace std;
 
-// Function prototypes because I put the function definitions after the main program loop
+// Function prototypes because I put the function definitions after the main program loop 
 void quadraticRoots(double a, double b, double c);
 double discriminant(double a, double b, double c);
 void calculateRoots(double a, double b, double c, double disc);
@@ -18,12 +18,12 @@ void calculateRoots(double a, double b, double c, double disc);
 int main() {
     double a, b, c;
     char choice;
-
+//here we will use a do while loop to allow the user to solve multiple equations without restarting the program :)
     do {
         cout << "This program calculates the roots of a quadratic equation in the form of ax^2 + bx + c.\n";
         cout << "Enter the coefficients of the quadratic equation (a, b, and c): ";
         cin >> a >> b >> c;
-
+//error checking to make sure the equation is quadratic
         if (a == 0) {
             cout << "This is not a quadratic equation. 'a' must be non-zero. Remember, 'x' of a variable is really '1x'\n" << endl;
         } else {
@@ -37,11 +37,11 @@ int main() {
     return 0;
 }
 
-// now we will implement the function prototypes
+// implementing the function prototypes. discriminant function is the b^2 - 4ac part of the quadratic formula
 double discriminant(double a, double b, double c) {
     return (b*b) - (4 * a * c);
 }
-
+// calculateRoots function will calculate the roots, or the "x's" of the quadratic equation
 void calculateRoots(double a, double b, double c, double disc) {
     cout << fixed << setprecision(2);
     if (disc >= 0) {
@@ -57,7 +57,7 @@ void calculateRoots(double a, double b, double c, double disc) {
     }
 }
 
-// add the quadraticRoots function
+// the quadraticRoots function
 void quadraticRoots(double a, double b, double c) {
     double disc = discriminant(a, b, c);
 
