@@ -32,12 +32,13 @@ int main() {
         else {
             if (isPrime(n)) {
                 cout << n << " is a prime number!\n";
+                //print the divisors of the number
+                 printDivisors(n);
             } else {
                 cout << n << " is not a prime number.\n";
             }
         }
-//print the divisors of the number
-        printDivisors(n);
+
         //ask the user if they want to check another number to close the do while loop
         cout << "Do you want to check another number? (y/n): ";
         cin >> choice;
