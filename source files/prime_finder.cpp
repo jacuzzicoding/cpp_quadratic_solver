@@ -15,7 +15,7 @@ void printDivisors(int n);
 
 // main program loop
 int main() {
-    double n;
+    int n;
     char choice;
 
 //the intro message will be outside of the do loop so it only prints once. 
