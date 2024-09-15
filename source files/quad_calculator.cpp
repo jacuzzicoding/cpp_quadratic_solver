@@ -3,7 +3,7 @@
 //Assignment: Lab Assignment 1 - Quadratic Formula Calculator 
 //Date: 9/09/2024
 
-
+//including the necessary libraries
 #include <iostream>
 #include <cmath>
 #include <iomanip>
